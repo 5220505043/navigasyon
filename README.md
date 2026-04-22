@@ -1,20 +1,12 @@
-Otonom Araç Navigasyon Güvenlik ModülüBu proje, bir otonom aracın iki farklı engel sınıfı arasında en güvenli rotayı belirlemesi için geliştirilmiş bir Support Vector Machine (SVM) uygulamasıdır. Algoritma, iki engel grubu arasındaki boşluğu (margin) maksimize ederek araç için en geniş "güvenlik koridorunu" hesaplar.
-🚀 Proje AmacıNavigasyon sistemlerinde sadece engelleri ayırmak yeterli değildir. Sistemin güvenliği için ayrıştırıcı sınırın, her iki sınıftaki en yakın koordinatlara (Destek Vektörleri) uzaklığının maksimum olması gerekir. Bu proje, bu optimum sınırı bulan matematiksel modeli ve algoritmayı içerir.🛠 Teknik ÖzelliklerDil: C++ (Modern C++ Standartları)Algoritma: Stochastic Gradient Descent (SGD) tabanlı SVMMimari: Nesne Yönelimli Programlama (OOP) - Katmanlı MimariBellek Yönetimi: RAII prensibi ile sıfır bellek sızıntısı (Memory Leak Free)
-🏗 Yazılım MimarisiProje, sorumlulukların ayrılması (Separation of Concerns) prensibine göre 3 ana katmandan oluşur:Data Layer (DataManager): .txt formatındaki veri setlerini parse eder ve hata kontrolü yapar.Logic Layer (SVMSolver): Hinge Loss fonksiyonu kullanarak optimum hiperdüzlemi hesaplar.Application Layer (main): Tüm süreci yöneten ve sonuçları kullanıcıya sunan kontrol katmanıdır.📊 Algoritma AnaliziZaman Karmaşıklığı (Big-O):Eğitim: $O(Epoch \times N)$Tahmin: $O(1)$Neden Optimum? Rastgele bir ayrıştırıcı çizgi yerine, SVM marjı maksimize ederek aracın belirsizlik durumlarında (sensör hatası vb.) kaza yapma riskini matematiksel olarak minimize eder.
-💻 Kurulum ve Çalıştırma
-Repoyu klonlayın:
-
-Bash
-git clone https://github.com/kullaniciadi/navigasyon-sistemi.git
-veriler.txt dosyasını oluşturun ve koordinatları girin:
-
+Otonom Araç Navigasyon Güvenlik ModülüBu proje
+ bir otonom aracın iki farklı engel sınıfı arasında en güvenli rotayı belirlemesi için geliştirilmiş bir Support Vector Machine (SVM) uygulamasıdır. Algoritma, iki engel grubu arasındaki boşluğu (margin) maksimize ederek araç için en geniş "güvenlik koridorunu" hesaplar.
+🚀 Proje AmacıNavigasyon
+sistemlerinde sadece engelleri ayırmak yeterli değildir. Sistemin güvenliği için ayrıştırıcı sınırın, her iki sınıftaki en yakın koordinatlara (Destek Vektörleri) uzaklığının maksimum olması gerekir. Bu proje, bu optimum sınırı bulan matematiksel modeli ve algoritmayı içerir.🛠 Teknik ÖzelliklerDil: C++ (Modern C++ Standartları)Algoritma: Stochastic Gradient Descent (SGD) tabanlı SVMMimari: Nesne Yönelimli Programlama (OOP) - Katmanlı MimariBellek Yönetimi: RAII prensibi ile sıfır bellek sızıntısı (Memory Leak Free)
+🏗 Yazılım MimarisiProje
+sorumlulukların ayrılması (Separation of Concerns) prensibine göre 3 ana katmandan oluşur:Data Layer (DataManager): .txt formatındaki veri setlerini parse eder ve hata kontrolü yapar.Logic Layer (SVMSolver): Hinge Loss fonksiyonu kullanarak optimum hiperdüzlemi hesaplar.Application Layer (main): Tüm süreci yöneten ve sonuçları kullanıcıya sunan kontrol katmanıdır.📊 Algoritma AnaliziZaman Karmaşıklığı (Big-O):Eğitim: $O(Epoch \times N)$Tahmin: $O(1)$Neden Optimum? Rastgele bir ayrıştırıcı çizgi yerine, SVM marjı maksimize ederek aracın belirsizlik durumlarında (sensör hatası vb.) kaza yapma riskini matematiksel olarak minimize eder.
 Plaintext
 1.0 2.0 1
 5.0 8.0 -1
 Derleyin ve çalıştırın:
-
-Bash
-g++ main.cpp -o navigasyon_modulu
-./navigasyon_modulu
 📜 Lisans
 Bu proje akademik amaçlarla geliştirilmiştir.
